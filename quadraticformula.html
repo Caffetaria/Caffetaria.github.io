@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>quadratic formula</title>
+<style id="jsbin-css">
+body {
+  margin: 10px;
+}
+
+li { border: 1px solid #000000; }
+</style>
+</head>
+<body>
+
+
+  <!-- Latest Sortable -->
+  <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+
+
+
+<ul id="items">
+
+  <li id = "5">Taking the square root of both sides we get => <img src = "qf1.png" width="250" length="250">
+</li>
+<li id = "7"> => <img src = "qf3.png" width="250" length="250">
+</li>
+<li id = "6"> => <img src = "qf2.png" width="250" length="250">
+</li>
+<li id = "8"> => <img src = "qf4.png" width="250" length="250"> <br> => <img src = "quadform.png" width="250" length="250">
+</li>
+
+<li id ="3">We now divide both sides of the equation by a<br> => ax<sup>2</sup>/a + bx/a = -c/a <br> => x<sup>2</sup> + bx/a = -c/a
+  <li id = "9"> To conclude: if an equation is in the form ax<sup>2</sup> + bx + c = 0 then<img src = "quadform.png" width="250" length="250"></li>
+
+  <li id = "4"> To complete the square we have to take 1/2 of b/a and square it. <br> This is equal to 1/2(b/a)<sup>2</sup>We have to add this quantity to both sides of the equation in order to complete the square.
+  <br> =>x<sup>2</sup> + bx/a + (b/2a)<sup>2</sup> = -c/a + (b/2a)<sup>2</sup><br>The right hand side of this equation can be further simplified into -c/a + 4ac/4a<sup>2</sup><br>To obtain a common denominator we multiply both terms of the right hand side of the equation by 4a.The resulting equation is (x + b/2a)<sup>2</sup> = b<sup>2</sup>/4a<sup>2</sup> - 4ac/4a<sup>2</sup> => (x + b/2a)<sup>2</sup> = (b<sup>2</sup> - 4ac)/4a<sup>2</sup></li>
+
+<li id = "1">To prove: If an equation is in the form ax<sup>2</sup> + bx + c = 0 then<img src = "quadform.png" width="250" length="250"></li>
+
+	<li id = "2">We can subtract c from both sides of the equation ax<sup>2</sup> + bx + c = 0 .The equation is now ax<sup>2</sup> + bx + c -c  = 0 - c <br> =>  ax<sup>2</sup> + bx = -c</li>
+
+
+</ul>
+  <input id="clickMe" type="button" value="Submit" onclick="checkAnswer();" />
+
+<script id="jsbin-javascript">
+// Simple list
+//Sortable.create(simpleList, { /* options */ });
+
+
+var el = document.getElementById('items');
+
+Sortable.create(el);
+
+
+
+
+
+function checkAnswer() {
+
+var lis = document.getElementById("items").getElementsByTagName("li");
+    console.log('this is lis:' ,lis)
+    elementsArray = []
+    for (i = 0; i < lis.length; i++) {
+    currentElement = parseInt(lis[i].id)
+    elementsArray.push(currentElement)
+    }
+    console.log('elementsArray: ', elementsArray)
+  for (j=0; j < elementsArray.length; j++){
+
+    if (elementsArray[j]!== j+1){
+      alert('items are not in order')
+      return false
+    }
+
+  }
+  alert('Congratulations! You have got the order of statements in this proof right!')
+   return true
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>(a+b)^2</title>
+<style id="jsbin-css">
+body {
+  margin: 10px;
+}
+
+li { border: 1px solid #000000; }
+
+</style>
+</head>
+<body>
+
+
+  <!-- Latest Sortable -->
+  <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+
+
+
+<ul id="items">
+
+  <li id = "4">Hence we have proved that :Diagonals of a parallelogram bisect each other<br></li>
+
+  <li id ="3">  In triangle OAB and triangle OCD:<br>
+  AB = CD (opposite sides of a parallelogram are equal)<br>
+  Angle AOB = Angle COD(alternate interior angles as AB//CD and AC is the transversal)<br>
+  Angle OAB = Angle OCD(they are vertically opposite triangles)<br>
+    Thus Triangle OAB is congruent to Triangle OCD<br>
+    Hence by CPCT(corresponding parts of a congruent triangle are equal) we can prove that OA = OC, OB= OD.
+
+  <li id = "1">To prove:Diagonals of a parallelogram bisect each other</li>
+
+	<li id = "2">Construct a parallelogram ABCD and draw its diagonal AC and BD intersecting each other at O. <br><img src="plgm-1.png" length="250" width="250"><br>
+   </li>
+
+
+</ul>
+  <input id="clickMe" type="button" value="Submit" onclick="checkAnswer();" />
+
+<script id="jsbin-javascript">
+// Simple list
+//Sortable.create(simpleList, { /* options */ });
+
+
+var el = document.getElementById('items');
+
+Sortable.create(el);
+
+
+
+
+
+function checkAnswer() {
+
+var lis = document.getElementById("items").getElementsByTagName("li");
+    console.log('this is lis:' ,lis)
+    elementsArray = []
+    for (i = 0; i < lis.length; i++) {
+    currentElement = parseInt(lis[i].id)
+    elementsArray.push(currentElement)
+    }
+    console.log('elementsArray: ', elementsArray)
+  for (j=0; j < elementsArray.length; j++){
+
+    if (elementsArray[j]!== j+1){
+      alert('items are not in order')
+      return false
+    }
+
+  }
+  alert('Congratulations! You have got the order of statements in this proof right!')
+   return true
+}
+
+
+</script>
+</body>
+</html>

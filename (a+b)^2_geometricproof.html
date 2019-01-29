@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>(a+b)^2</title>
+<style id="jsbin-css">
+body {
+  margin: 10px;
+}
+
+li { border: 1px solid #000000; }
+
+</style>
+</head>
+<body>
+
+
+  <!-- Latest Sortable -->
+  <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+
+
+
+<ul id="items">
+
+  <li id = "5">Calculate the area of each rectilinear figure.
+  1.The first figure is a square and its side is a.Therefore, the area of this square is a<sup>2</sup>.<br>2.The second and third figures are rectangles.The lengths of its sides are a and b.The are of a rectangle = length * breadth.Therefore, the area of each rectangle is ab.<br>The fourth figure is a square and length of each of its sides is
+b.Therefore the area of the square is b<sup>2</sup>.The sum of the areas of each rectilinear figure of the square = a<sup>2</sup>+ab+ab+b<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup>
+</li>
+  <li id = "6"> To conclude:(a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup></li>
+
+  <li id = "4"> The two perpendicular lines divide the square into four rectilinear figures in which two figures are squares and the other two are rectangles. </li>
+
+  <li id ="3">Now take the ruler and draw a perpendicular line to the horizontal side at the point where the side is divided into unequal parts.Repeat the same action to the vertical side of the square.<img src = "square_dividednew.png" width="350" length="350"> </li>
+
+
+	<li id = "1">To prove: (a + b)<sup>2</sup> = a<sup>2</sup> + 2ab + b<sup>2</sup> </li>
+
+	<li id = "2">Construct a square like so: <br><img src="square.png" length="250" width="250"><br>The length and width of a square are equal.Therefore the area of a square is equal to the square of its side.<br>Assume the length of the side of the square is divided into two unequal parts. The length of one part is a and the length of the other part is b.Therefore, the length of each side of the square is (a+b).Hence, the area of this square is (a+b)<sup>2</sup>.<br><img src="(a+b) square.png" width="400" length="400">
+   </li>
+
+
+</ul>
+  <input id="clickMe" type="button" value="Submit" onclick="checkAnswer();" />
+
+<script id="jsbin-javascript">
+// Simple list
+//Sortable.create(simpleList, { /* options */ });
+
+
+var el = document.getElementById('items');
+
+Sortable.create(el);
+
+
+
+
+
+function checkAnswer() {
+
+var lis = document.getElementById("items").getElementsByTagName("li");
+    console.log('this is lis:' ,lis)
+    elementsArray = []
+    for (i = 0; i < lis.length; i++) {
+    currentElement = parseInt(lis[i].id)
+    elementsArray.push(currentElement)
+    }
+    console.log('elementsArray: ', elementsArray)
+  for (j=0; j < elementsArray.length; j++){
+
+    if (elementsArray[j]!== j+1){
+      alert('items are not in order')
+      return false
+    }
+
+  }
+  alert('Congratulations! You have got the order of statements in this proof right!')
+   return true
+}
+
+
+</script>
+</body>
+</html>

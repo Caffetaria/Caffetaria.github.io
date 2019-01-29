@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>(a+b)^2</title>
+<style id="jsbin-css">
+body {
+  margin: 10px;
+}
+
+li { border: 1px solid #000000; }
+
+</style>
+</head>
+<body>
+
+
+  <!-- Latest Sortable -->
+  <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
+
+
+
+<ul id="items">
+
+  <li id = "5">Thus we have proved that AB = CD, BC = DA, Angle B = Angle D and Angle A = Angle C</li>
+  <li id = "6">Hence we have proved that :<br>i) opposite sides of a parallelogram are equal<br>
+                        ii) opposite angles of a parallelogram are equal</li>
+
+   </li>
+
+  <li id = "4"> Similarly , by drawing diagonal BD , we can prove that Triangle ABD is congruent to Triangle CDB.Thus by CPCT(correrponding parts of a congruent triangle are equal) we can prove that Angle A = Angle C.</li>
+
+  <li id ="3">  In triangle ABC and triangle CDA:<br>
+    Angle 4 = Angle 1 (alternate interior angles as AB//CD and AC is the transversal)
+    Angle 3 = Angle 2(alternate interior angles as AD//CB and AC is the transversal)
+    AC = CA(common side)
+    Thus Triangle ABC is congruent to Triangle CDA
+    Hence by CPCT(correrponding parts of a congruent triangle are equal) we can prove that AB = CD, BC = DA and Angle B = Angle D.
+  </li>
+	<li id = "1">To prove: i) opposite sides of a parallelogram are equal<br>
+                        ii) opposite angles of a parallelogram are equal</li>
+
+	<li id = "2">Construct a parallelogram ABCD and draw its diagonal AC.Mark its angles like so: <br><img src="d-1.png" length="250" width="250"><br>
+   </li>
+
+
+</ul>
+  <input id="clickMe" type="button" value="Submit" onclick="checkAnswer();" />
+
+<script id="jsbin-javascript">
+// Simple list
+//Sortable.create(simpleList, { /* options */ });
+
+
+var el = document.getElementById('items');
+
+Sortable.create(el);
+
+
+
+
+
+function checkAnswer() {
+
+var lis = document.getElementById("items").getElementsByTagName("li");
+    console.log('this is lis:' ,lis)
+    elementsArray = []
+    for (i = 0; i < lis.length; i++) {
+    currentElement = parseInt(lis[i].id)
+    elementsArray.push(currentElement)
+    }
+    console.log('elementsArray: ', elementsArray)
+  for (j=0; j < elementsArray.length; j++){
+
+    if (elementsArray[j]!== j+1){
+      alert('items are not in order')
+      return false
+    }
+
+  }
+  alert('Congratulations! You have got the order of statements in this proof right!')
+   return true
+}
+
+
+</script>
+</body>
+</html>

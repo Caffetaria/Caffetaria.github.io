@@ -1,0 +1,50 @@
+
+#cover {
+  height: 900px;
+  position: relative;
+  top: -55px;
+  width: 100%;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/8/8d/P._Oxy._I_29.jpg") no-repeat center bottom;
+
+background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.cover-content {
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: 280px;
+  width: 70%;
+}
+
+h1 {
+  color: Black;
+  font-family: 'Amatic SC', cursive;
+  font-size: 72px;
+  line-height: 60px;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+
+a.btn {
+  background-color: #14213D;
+  color: black;
+  font-family: 'Amatic SC', cursive;
+  font-size: 26px;
+  padding: 14px;
+  background-image: -webkit-linear-gradient(#FFD194,#BC1324);
+}
+a.btn:hover {
+	box-shadow: 0px 4px 4px rgba(34,62,66,.5);
+	-webkit-transition: box-shadow 1s ease;
+	transition: box-shadow 1s ease;
+}
+border{
+  border-style: ridge;
+  border-color: -webkit-linear-gradient(#FFD194,#BC1324);
+  border-width: medium;
+}
